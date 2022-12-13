@@ -3,6 +3,7 @@ yum install -y irqbalance
 systemctl enable irqbalance
 systemctl start irqbalance
 
+On /etc/sysctl.conf add this lines:
 net.ipv4.conf.all.arp_notify = 1
 #Increase size of file handles and inode cache
 fs.file-max = 2097152
@@ -45,3 +46,11 @@ net.ipv4.tcp_mem = 50576 64768 98152
 net.ipv4.tcp_rmem = 4096 87380 16777216
 net.ipv4.tcp_wmem = 4096 65536 16777216
 
+On this service file /usr/lib/systemd/system/firebird-superclassic.service add below bracket named by the Service tag
+User=firebird
+Group=firebird
+Type=forking
+CPUQuota=60%
+MemoryLimit=10G
+Nice=-10
+TasksMax=10
