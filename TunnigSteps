@@ -54,3 +54,13 @@ CPUQuota=60%
 MemoryLimit=10G
 Nice=-10
 TasksMax=10
+
+Firebird 3.0.5 Instalation 
+Download and desconpression
+curl -L https://github.com/FirebirdSQL/firebird/releases/download/R3_0_5/Firebird-3.0.5.33220-0.amd64.tar.gz | tar -zxC /tmp/
+Installation
+cd /tmp/Installatio folder
+./install.sh
+
+
+
