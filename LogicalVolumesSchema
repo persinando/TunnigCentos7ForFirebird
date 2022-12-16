@@ -1,0 +1,14 @@
+#LVM
+
+2 Phisical SSD´s
+    1 - vSSD 100GiB - to the Kernel - xvda2
+         swap: 9.81 GiB
+         root: 79.17 GiB
+         home: 10.0 GiB
+    1 - vSSD 200GiB - to the database files - xvdb1
+         FBDataBase: 200 GiB 
+              Mount: /etc/firebird/database
+    1 - vSSD 200GiB - to the backup local storage - xvdc1
+         FBBackups: 200GiB
+              Mount: /etc/firebird/backups
+    
