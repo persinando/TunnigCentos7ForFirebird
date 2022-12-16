@@ -3,11 +3,5 @@ yum install -y epel-release
 # packages and tools
 yum install -y ncurses libicu libtommath curl tar
 
-#Firebird 3.0.5 Instalation 
-User: SYDBA
-Password: masterkey
-#Download and desconpression
-curl -L https://github.com/FirebirdSQL/firebird/releases/download/R3_0_5/Firebird-3.0.5.33220-0.amd64.tar.gz | tar -zxC /tmp/
-cd /tmp/Installatio folder
-./install.sh
+
 
