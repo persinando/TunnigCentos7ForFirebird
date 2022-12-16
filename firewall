@@ -1,0 +1,18 @@
+#FirewallD
+DefaultZone:public
+
+Services anable
+Description:Port:Protocol
+dn:53:TCP/UDP
+kerberos:88:TCP/UDP
+kpasswd:464:TCP/UDP
+ldap:389:TCP/UDP
+ldaps:636:TCP/UDP
+samba:137,138,138,445:TCP/UDP
+ssh:22:TCP/UDP
+webmin:10000:TCP
+cockpit:9090:TCP
+firebird:3050:TCP
+
+
+
