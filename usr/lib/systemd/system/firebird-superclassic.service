@@ -1,0 +1,23 @@
+#File tweak to start the service properly
+#Define priority of cpu, memory limit and process
+
+[Unit]
+Description=Firebird Database Server ( SuperClassic )
+After=syslog.target network.target
+Conflicts=firebird-classic.socket
+
+[Service]
+User=firebird
+Group=firebird
+Type=forking
+CPUQuota=60%
+MemoryLimit=16G
+Nice=-10
+TaskMax=10
+PIDFile=/var/run/firebird/firebird.pid
+ExecStart=/opt/firebird/bin/fbguard -pidfile /var/run/firebird/firebird.pid -daemon -forever
+#ExecStart=/opt/firebird/bin/fbguard -daemon -forever
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
