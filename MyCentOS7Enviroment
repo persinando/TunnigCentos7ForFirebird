@@ -25,3 +25,10 @@ yum install -y perl webmin
 
 # Habilitando CockPIT
 systemctl enable --now cockpit.socket  
+
+# Download decompress LinuxGuestTools
+curl -L https://downloads.citrix.com/17415/CitrixHypervisor-LinuxGuestTools-7.20.2-1.tar.gz?__gda__=exp=1671201823~acl=/*~hmac=aef0f5909db8ff274afb71accc6537cdbb18a833d1a02c0ccbff2d393c5acbdf | tar -zxC /tmp/
+#Install
+cd /tmp/LinuxGuestTools
+./install.sh
+
