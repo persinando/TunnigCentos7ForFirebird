@@ -1,0 +1,27 @@
+#My Linux environment
+yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 
+yum -y groupinstall 'Development Tools'
+yum install -y cockpit vim git wget net-tools bind attr libldb libtalloc libtdb libtevent python-devel gnutls-devel \
+       libacl-devel openldap-devel pam-devel readline-devel krb5-devel cups-devel bind iniparser bind-utils docbook-style-xsl gcc gdb krb5-workstation \
+       libsemanage-python libxslt perl perl-ExtUtils-MakeMaker \
+       perl-Parse-Yapp perl-Test-Base pkgconfig policycoreutils-python \
+       python2-crypto gnutls-devel libattr-devel keyutils-libs-devel \
+       libacl-devel libaio-devel libblkid-devel libxml2-devel openldap-devel \
+       pam-devel popt-devel python-devel readline-devel zlib-devel systemd-devel setroubleshoot-server \
+       lmdb-devel jansson-devel gpgme-devel pygpgme libarchive-devel
+       
+# Instalação do WebMin
+vim /etc/yum.repo.d/webmin.repo
+[Webmin]
+name=Webmin Distribution Neutral
+#baseurl=https://download.webmin.com/download/yum
+mirrorlist=https://download.webmin.com/download/yum/mirrorlist
+enabled=1
+
+#Chave de liberação
+wget https://download.webmin.com/jcameron-key.asc
+rpm --import jcameron-key.asc
+yum install -y perl webmin
+
+# Habilitando CockPIT
+systemctl enable --now cockpit.socket  
