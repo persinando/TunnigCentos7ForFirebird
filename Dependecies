@@ -1,0 +1,5 @@
+#epel-release
+yum install -y epel-release
+# packages and tools
+yum install -y ncurses libicu libtommath curl tar
+
